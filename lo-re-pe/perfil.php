@@ -352,7 +352,6 @@
             </div>
             <div class="text-right mt-3">
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>&nbsp;
-                <button type="button" class="btn btn-default">Cancelar</button>
             </div>
 
         </div>
