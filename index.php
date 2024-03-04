@@ -438,8 +438,6 @@
                     <br>
                     <p>Inscríbete gratis a los beneficios únicos. Sé parte de la comunidad.</p>
                     <br>
-                    <a href="#">Únete</a>
-                    <a href="#">Inicia Sesión</a>
                 </div>
             </div>
         </section>
