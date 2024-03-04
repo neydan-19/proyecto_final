@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}    
+
+
+body{
+    background-color: aliceblue;
+    display: flex;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+  
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 2px solid black;
+}    
+
+.contenedor:hover{
+    -webkit-box-shadow: -15px 12px 20px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -15px 12px 20px -4px rgba(0,0,0,0.75);
+    box-shadow: -15px 12px 20px -4px rgba(0,0,0,0.75);
+}
+
+
+.imagen-login{
+    height: 550px;
+    width: 550px;
+    border-radius: 20px 0px 0px 20px;
+}    
+
+
+form{
+    height: 550px;
+    width: 450px;
+    background-color: white;
+    padding: 30px;
+    border-top-right-radius:20px;
+    border-bottom-right-radius: 20px;
+    border-left: none;
+}
+
+
+.btn-primary{
+    width: 100%;
+    border:none ;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.form-control{
+    color: rgba(0,0,0,.87);
+    border-bottom-color:rgba(0, 0, 0, .42);
+    box-shadow: none !important;
+    border:none;
+    border-bottom: 1px solid;
+    border-radius: 4px 4px 0 0;
+}
+
+
+h4{
+    font-size: 2rem !important;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+.form-label{
+    font-family:700 !important;
+}
+
+.mb-3{
+    padding: 10px;
+}
+
+
+.contra{
+    text-decoration: none;
+    color: black;
+}
+
+.politica{
+    text-decoration: none;
+    color: black;
+}
+
+.form-check .link_register {
+    text-decoration: none;
+    color: black;
+}
+
+.enviar {
+    text-align: center;
+}
+
+@media only screen and (max-width:600px){
+    form {
+        width: 100% !important;       
+    }
+}
