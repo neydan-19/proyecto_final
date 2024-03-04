@@ -1,38 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/swiper2.css" />
-    <link rel="stylesheet" href="./css/swiper.css">
-    <link rel="icon" type="img/png" href="./img/nike_logo.webp" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Page Oficial</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/producto.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="img/png" href="../img/nike_logo.webp" />
+    <title>Registrarse</title>
 </head>
 
 <body>
-<?php
-    session_start();
-    if (isset($_SESSION['msj'])) {
-        $respuesta = $_SESSION['msj'];
-        unset($_SESSION['msj']);
-
-    ?>
-        <script>
-            Swal.fire({
-                title: "Registro Exitoso!",
-                text: "Bienvenido!",
-                icon: "success"
-            });
-        </script>
-    <?php
-    }
-    ?>
     <header>
-        <a href="" class="contenedor-img"><img src="./img/nike_logo.webp" alt="logo"></a>
+        <a href="../index.php" class="contenedor-img"><img src="../img/nike_logo.webp" alt="logo"></a>
         <nav>
             <ul>
                 <li id="lanzamientos" class="li">
@@ -260,187 +244,43 @@
         </nav>
         <div class="buscador">
             <button>
-                <img src="./img/lupa.png" alt="icon">
+                <img src="../img/lupa.png" alt="icon">
             </button>
             <input type="text" placeholder="Buscar">
         </div>
         <div class="user">
-            <a href="./lo-re-pe/login.php"><img src="./img/usuario.png" alt="Iniciar Sesion"></a>
+            <a href="./login.php"><img src="../img/usuario.png" alt="Iniciar Sesion"></a>
         </div>
     </header>
 
     <main>
-        <div class="noticias"></div>
-        <section class="video-container">
-            <img src="./img/JORDAN1.jpeg" alt="">
-            <div class="jordan-title">
-                <h5>Jordan</h5>
-                <p><b>JORDAN 1<br> RETRO HIGH OG CHICAGO.</b></p>
-                <div>
-                    <a href="./lo-re-pe/producto.php">Comprar Jordan</a>
-                    <a href="#">Comprar Jordan 1 OG CHICAGO</a>
+
+        <div class="container">
+            <img src="../img/JORDAN1.jpeg" alt="">
+            <form action="comprar.php" method="POST">
+                <br>
+                <h4 class="text-center" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 34px">JORDAN 1<br> RETRO HIGH OG CHICAGO.</h4>
+                <div class="mb-3 mt-4 texto">
+                    <input type="hidden" name="modelo" value="Jordan Retro Hight OG CHICAGO">
+                    <label for="exampleInputName1" class="form-label">TALLAS DISPONIBLES</label>
+                    <select name="talla" id="talla">
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
                 </div>
-            </div>
-        </section>
-
-        <br>
-        <br>
-        <br>
-
-        <section class="carrusel_container">
-            <div class="carrusel_container-item">
-                <div class="swiper-container mySwiper">
-                    <h1>Siempre icónico</h1>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel1/c1_1.jpg" alt=""></a>
-                            <h2>Jordan</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel1/c1_2.jpg" alt=""></a>
-                            <h2>Dunk</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel1/c1_3.jpg" alt=""></a>
-                            <h2>Pegasus</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel1/c1_4.jpg" alt=""></a>
-                            <h2>Air Max</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel1/c1_5.jpg" alt=""></a>
-                            <h2>Blazer</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel1/c1_6.jpg" alt=""></a>
-                            <h2>Air Force</h2>
-                        </div>
-                    </div>
-                    <div class="swiper-button-next flecha1"></div>
-                    <div class="swiper-button-prev flecha1"></div>
+                <div class="mb-3 texto">
+                    <label for="exampleInputlastname1" class="form-label">PRECIO: S/</label>
+                    <input type="number" value="3600" disabled style="width: 70px;" name="precio">
                 </div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-            <hr>
-
-            <div class="carrusel_container-item">
-                <div class="swiper-container mySwiper">
-                    <h1>Lo más nuevo</h1>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel2/c1.jpg" alt=""></a>
-                            <div class="item-detalles">
-                                <p class="nombre">Nike Dunk Low</p>
-                                <p class="precio">S/539.90</p>
-                                <p class="categoria">Zapatillas para mujer</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel2/c2.jpg" alt=""></a>
-                            <div class="item-detalles">
-                                <p class="nombre">Nike Air Max 90</p>
-                                <p class="precio">S/ 649.90</p>
-                                <p class="categoria">Zapatillas para hombre</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel2/c3.jpg" alt=""></a>
-                            <div class="item-detalles">
-                                <p class="nombre">Nike Air Force 1 '07 FlyEase</p>
-                                <p class="precio">S/ 529.90</p>
-                                <p class="categoria">Zapatillas Urbano Mujer</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel2/c4.jpg" alt=""></a>
-                            <div class="item-detalles">
-                                <p class="nombre">Air Jordan 1 Low SE</p>
-                                <p class="precio">S/ 599.90</p>
-                                <p class="categoria">Zapatillas para hombre</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel2/c5.jpg" alt=""></a>
-                            <div class="item-detalles">
-                                <p class="nombre">Nike Air Max 97 Futura</p>
-                                <p class="precio">S/ 899.90</p>
-                                <p class="categoria">Zapatillas para mujer</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel2/c6.jpg" alt=""></a>
-                            <div class="item-detalles">
-                                <p class="nombre">Nike Air Force 1 '07</p>
-                                <p class="precio">S/ 559.90</p>
-                                <p class="categoria">Zapatillas para hombre</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-next flecha2"></div>
-                    <div class="swiper-button-prev flecha2"></div>
+                <button type="submit" class="btn btn-primary mt-4">Enviar</button>
                 </div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-            <hr>
-
-            <div class="carrusel_container-item">
-                <div class="swiper-container mySwiper">
-                    <h1>Deportes</h1>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c1.jpg" alt=""></a>
-                            <h2>Fútbol</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c2.jpg" alt=""></a>
-                            <h2>Básquet</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c3.jpg" alt=""></a>
-                            <h2>Correr</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c4.jpg" alt=""></a>
-                            <h2>Entrenar</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c5.jpg" alt=""></a>
-                            <h2>Yoga</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c6.jpg" alt=""></a>
-                            <h2>Tenis</h2>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href=""><img src="./img/carrusel3/c7.jpg" alt=""></a>
-                            <h2>Skate</h2>
-                        </div>
-                    </div>
-                    <div class="swiper-button-next flecha1"></div>
-                    <div class="swiper-button-prev flecha1"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="membresia">
-            <div class="membresia-container">
-                <h1>Membresía Nike</h1>
-                <img src="./img/menbresia.jpg" alt="img">
-                <div class="texto-membresia">
-                    <h1><b>HAZTE MIEMBRO</b></h1>
-                    <br>
-                    <p>Inscríbete gratis a los beneficios únicos. Sé parte de la comunidad.</p>
-                    <br>
-                </div>
-            </div>
-        </section>
+                
+            </form>
+        </div>
 
     </main>
 
@@ -477,12 +317,12 @@
 
             <div class="redes">
                 <ul class="icons">
-                    <li><a href="#"><img src="./img/twitter.png" alt=""></a></li>
-                    <li><a href="#"><img src="./img/facebook.png" alt=""></a></li>
-                    <li><a href="#"><img src="./img/youtube.png" alt=""></a></li>
-                    <li><a href="#"><img src="./img/instagram.png" alt=""></a></li>
+                    <li><a href="#"><img src="../img/twitter.png" alt=""></a></li>
+                    <li><a href="#"><img src="../img/facebook.png" alt=""></a></li>
+                    <li><a href="#"><img src="../img/youtube.png" alt=""></a></li>
+                    <li><a href="#"><img src="../img/instagram.png" alt=""></a></li>
                 </ul>
-                <a href=""><img src="./img/libro-de-reclamaciones.webp" alt="" class="libro"></a>
+                <a href=""><img src="../img/libro-de-reclamaciones.webp" alt="" class="libro"></a>
             </div>
             <div class="ubicacion">
                 <p><a href="#"><b>Perú</b></a> 2023 Equinox International SAC. Todos los derechos reservados.</p>
@@ -498,8 +338,6 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="app.js"></script>
 </body>
 
 </html>

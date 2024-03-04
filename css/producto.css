@@ -1,0 +1,36 @@
+main{
+    height: calc(100vh - 70px) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    padding: 0;
+}
+
+.container:hover{
+    box-shadow: -10px 10px 20px 0 rgba(0,0,0,0.4);
+}
+
+.container img {
+    width: 70%;
+}
+
+.container form {
+    width: 30%;
+    padding: 15px;
+}
+
+form label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.texto {
+    display: flex;
+    justify-content: space-between;
+}

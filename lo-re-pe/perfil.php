@@ -85,8 +85,8 @@
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Cambio Invalido de Contraseña",
-                footer: '<a href="#">Has olvidado tu contraseña?</a>'
+                text: "Cambio Invalido de Datos",
+                footer: "Contraseña actual erronea o valores nulos"
             });
         </script>
     <?php
@@ -115,7 +115,7 @@
     ?>
     <form action="../Controller/actualizar.php" method="POST">
         <header>
-            <a href="../index.php" class="contenedor-img"><img src="../img/nike_logo.webp" alt="logo"></a>
+            <a href="../index.php?id_usuario=<?php echo $row['id_usuario'] ?>" class="contenedor-img"><img src="../img/nike_logo.webp" alt="logo"></a>
         </header>
         <hr>
         <div class="container light-style flex-grow-1 container-p-y">
@@ -138,13 +138,12 @@
                         <div class="tab-content">
                             <div class="tab-pane fade active show" id="account-general">
                                 <div class="card-body media align-items-center">
-                                    <img src="../img/usuario.png" alt class="d-block ui-w-80">
+                                    <img src="" id="img" style="max-width: 100px;min-width: 100px;min-height: 100px;max-height: 100px;;border-radius: 50px;" name="Imagen">
                                     <div class="media-body ml-4">
-                                        <label class="btn btn-outline-primary">
+                                        <label class="btn btn-outline-primary" for="foto">
                                             Actualizar Foto
-                                            <input type="file" class="account-settings-fileinput">
+                                            <input type="file" class="account-settings-fileinput" name="Foto" id="foto" accept="image/*">
                                         </label> &nbsp;
-                                        <button type="button" class="btn btn-default md-btn-flat">Eliminar</button>
                                         <div class="text-light small mt-1" style="color: black !important;">Solo JPG, GIF o PNG. Max tamaño de 800K</div>
                                     </div>
                                 </div>
@@ -361,6 +360,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         //NO TOCAR POR NADA DEL MUNDO
+        const fotoDefault = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQgrnXQr8_tLaOGSywuwUpFcVEzD1M_jIeDdWc0GukWg&s"
+        document.getElementById('img').src =fotoDefault
+        
+        const archivo = document.getElementById('foto')
+        const imagen = document.getElementById('img')
+
+        archivo.addEventListener('change', e => {
+            if(e.target.files[0]){
+                const leer = new FileReader( );
+                leer.onload = function( e ){
+                    imagen.src = e.target.result;
+                }
+                leer.readAsDataURL(e.target.files[0])
+            }else{
+                imagen.src = fotoDefault;
+            }
+        })
+
+
         let paginaActual = 1
 
         getData(paginaActual)
@@ -408,6 +426,9 @@
                     content.innerHTML = data
                 }).catch(err => console.log(err))
         }
+
+        
+        
     </script>
 </body>
 
